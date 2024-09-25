@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            flex: 1;
+            background-image: url('image/1.jpg'); /* Replace 'your-image.png' with the correct image path */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .left-section .content {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+        }
+
+        .left-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .left-section .signature {
+            font-size: 14px;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .right-section p {
+            font-size: 14px;
+            margin-bottom: 30px;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            border-color: #000;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .google-signup {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-signup img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .signin {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signin a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signin a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-section">
+        <div class="content">
+            <h1>abc.com</h1>
+            <p>abc.com is the best place to find remote talent. We've been super impressed by the quality of applicants.</p>
+            <p class="signature">Madhushan Sasanka<br>CEO, abc.com</p>
+        </div>
+    </div>
+    <div class="right-section">
+        <h2 style="text-align: center;padding-bottom: 30px">Create an account</h2>
+
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password">
+            </div>
+            <button style="border-radius: 15px " type="submit" class="btn">Create Account</button>
+            <button  class="google-signup" style="border-radius: 15px">
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo"/>
+                Sign up with Google
+            </button>
+        </form>
+        <div class="signin">
+            <p>Already have an account? <a href="login1.html">Sign in</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

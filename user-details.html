@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.delete {
+            background-color: #dc3545;
+        }
+        .button.delete:hover {
+            background-color: #c82333;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>User Details</h2>
+
+    <form>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" placeholder="Enter Full Name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="text" id="email" placeholder="Enter Email Address" required>
+
+        <label for="userType">User Type:</label>
+        <select id="userType">
+            <option value="applicant">Applicant</option>
+            <option value="recruiter">Recruiter</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <div class="button-container">
+            <button class="button" type="submit">Save Changes</button>
+            <button class="button delete" type="button">Delete User</button>
+            <button class="button" type="button">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+

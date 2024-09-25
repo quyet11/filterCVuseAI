@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, p {
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            background-color: #f4f4f4;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.shortlist {
+            background-color: #28a745;
+        }
+        .button.shortlist:hover {
+            background-color: #218838;
+        }
+        .button.reject {
+            background-color: #dc3545;
+        }
+        .button.reject:hover {
+            background-color: #c82333;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Applicant Name: John Doe</h2>
+    <p><strong>Match Score:</strong> 85%</p>
+
+    <label for="cv-details">CV Details:</label>
+    <textarea id="cv-details" readonly>This is the CV summary. The applicant has experience in software development, specializes in front-end technologies like React and JavaScript, and has worked on various projects related to web applications.</textarea>
+
+    <div class="button-container">
+        <button class="button" type="button">View Full CV</button>
+        <button class="button shortlist" type="button">Shortlist</button>
+        <button class="button reject" type="button">Reject</button>
+    </div>
+</div>
+</body>
+</html>

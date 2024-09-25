@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .search-bar, .filter-bar {
+            margin-bottom: 20px;
+        }
+        .filter-bar select, .search-bar input {
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+        }
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+        .job-card {
+            padding: 15px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        .apply-button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Job Search</h2>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search by Keywords">
+    </div>
+    <div class="filter-bar">
+        <select>
+            <option value="">Location</option>
+            <option value="new-york">New York</option>
+            <option value="london">London</option>
+        </select>
+        <select>
+            <option value="">Job Type</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+        </select>
+        <select>
+            <option value="">Salary Range</option>
+            <option value="50k-60k">$50k - $60k</option>
+            <option value="60k-70k">$60k - $70k</option>
+        </select>
+    </div>
+
+    <ul class="job-list">
+        <li class="job-card">
+            <div>
+                <h4>Software Engineer</h4>
+                <p>Company: ABC Corp | Location: New York | Salary: $60k</p>
+            </div>
+            <button onclick="jobdetail()" class="apply-button">Apply</button>
+        </li>
+        <li class="job-card">
+            <div>
+                <h4>Data Analyst</h4>
+                <p>Company: XYZ Ltd | Location: London | Salary: $55k</p>
+            </div>
+            <button onclick="jobdetail()" class="apply-button">Apply</button>
+        </li>
+    </ul>
+</div>
+<script>
+    function jobdetail(){
+        window.location.href='job-details.html';
+    }
+</script>
+</body>
+</html>

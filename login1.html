@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* Your existing CSS styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section {
+            flex: 1;
+            background-image: url('image/1.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .left-section .content {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+        }
+
+        .left-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .left-section .signature {
+            font-size: 14px;
+        }
+
+        .right-section {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .right-section p {
+            font-size: 14px;
+            margin-bottom: 30px;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            border-color: #000;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .google-signup img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signin a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signin a:hover {
+            text-decoration: underline;
+        }
+        .google-login {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-login img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-section">
+        <div class="content">
+            <h1>abc.com</h1>
+            <p>abc.com is the best place to find remote talent. We've been super impressed by the quality of applicants.</p>
+            <p class="signature">Madhushan Sasanka<br>CEO, abc.com</p>
+        </div>
+    </div>
+    <div class="right-section">
+        <h2 style="text-align: center;padding-bottom: 30px">Create an account</h2>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <input class="w3-input w3-border-0" type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input class="w3-input w3-border-0" type="password" id="password" placeholder="Password" required>
+            </div>
+            <button style="border-radius: 15px" type="submit" class="btn">Create Account</button>
+
+            <button id="login-btn" class="google-login" style="border-radius: 15px">
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo"/>
+                Login with Google
+            </button>
+
+            <div class="hidden" id="profile-screen">
+                <p>Welcome <span id="user-name"></span>!</p>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </form>
+        <div class="login">
+            <p>Already have an account? <a href="login1.html">Sign in</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript code -->
+<script type="module">
+    import { account } from './appwrite.js'; // Ensure the path is correct
+
+    const loginBtn = document.getElementById('login-btn');
+    const profileScreen = document.getElementById('profile-screen');
+    const userNameSpan = document.getElementById('user-name');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    // Function to handle Google OAuth login
+    loginBtn.addEventListener('click', async (event) => {
+        event.preventDefault(); // Prevent form submission
+        try {
+            // Initiate OAuth2 login for Google
+            await account.createOAuth2Session(
+                'google',
+                'https://yourdomain.com/', // Replace with your actual redirect URI
+                'https://yourdomain.com/'  // Optional: Failure redirect URI
+            );
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    });
+
+    // Function to handle logout
+    logoutBtn.addEventListener('click', async () => {
+        try {
+            await account.deleteSession('current');
+            profileScreen.classList.add('hidden');
+            loginBtn.classList.remove('hidden');
+            alert('Logged out successfully.');
+        } catch (error) {
+            console.error('Error during logout:', error);
+        }
+    });
+
+    // Function to check user session on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const user = await account.get();
+            userNameSpan.textContent = user.name || user.email;
+            profileScreen.classList.remove('hidden');
+            loginBtn.classList.add('hidden');
+        } catch (error) {
+            console.log('No active session.');
+        }
+    });
+</script>
+</body>
+</html>

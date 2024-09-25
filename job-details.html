@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .job-info {
+            margin-bottom: 20px;
+        }
+        .job-info p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .job-info textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            resize: none;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.save {
+            background-color: #28a745;
+        }
+        .button.save:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Job Details</h2>
+    <div class="job-info">
+        <p><strong>Job Title:</strong> Software Engineer</p>
+        <p><strong>Company Name:</strong> TechCorp Inc.</p>
+        <p><strong>Job Description:</strong></p>
+        <textarea readonly>This is a detailed job description for the software engineer position. The candidate will work on various development tasks and projects, collaborate with cross-functional teams, and ensure the delivery of high-quality software solutions.</textarea>
+        <p><strong>Required Skills:</strong> JavaScript, React, Node.js, Agile Methodologies</p>
+        <p><strong>Salary Range:</strong> $80,000 - $100,000</p>
+    </div>
+
+    <div class="buttons">
+        <button onclick="applicationform()" class="button apply-now">Apply Now</button>
+        <button class="button save">Save Job</button>
+    </div>
+</div>
+<script>
+    function applicationform(){
+        window.location.href='application-form.html'
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin User Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .user-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+        .user-card h3 {
+            margin: 0 0 5px;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.delete {
+            background-color: #dc3545;
+        }
+        .button.delete:hover {
+            background-color: #c82333;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Admin User Management</h2>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search by User Name/Email">
+        <select>
+            <option value="">Select User Type</option>
+            <option value="applicant">Applicant</option>
+            <option value="recruiter">Recruiter</option>
+            <option value="admin">Admin</option>
+        </select>
+    </div>
+
+    <div class="user-card">
+        <h3>Name: John Doe</h3>
+        <p><strong>Email:</strong> john.doe@example.com</p>
+        <p><strong>User Type:</strong> Applicant</p>
+        <div>
+            <button class="button" type="button">Edit</button>
+            <button class="button delete" type="button">Delete</button>
+            <button class="button" type="button">View Activity</button>
+        </div>
+    </div>
+
+    <div class="user-card">
+        <h3>Name: Jane Smith</h3>
+        <p><strong>Email:</strong> jane.smith@example.com</p>
+        <p><strong>User Type:</strong> Recruiter</p>
+        <div>
+            <button class="button" type="button">Edit</button>
+            <button class="button delete" type="button">Delete</button>
+            <button class="button" type="button">View Activity</button>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="button" type="button">Create New User</button>
+    </div>
+</div>
+</body>
+</html>
